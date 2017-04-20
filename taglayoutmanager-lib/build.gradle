@@ -1,5 +1,28 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'TagLayoutManager'
+    bintrayName = 'TagLayoutManager'
+
+    libraryName = 'TagLayoutManager'
+    publishedGroupId = 'com.doitlite'
+    publishedArtifactId = 'TagLayoutManager'
+    libraryVersion = rootProject.ext.versionName
+
+    libraryDescription = 'This is an awesome library for RecyclerView. I custom the LayoutManager for RecyclerView, make the child view flow layout, and other people can custom different RecyclerView.Adapter to display the beautiful UI.'
+
+    siteUrl = 'https://github.com/doitlite/TagLayoutManager'
+    gitUrl = 'https://github.com/doitlite/TagLayoutManager.git'
+
+    developerId = 'zcchen306'
+    developerName = 'lite'
+    developerEmail = 'zcchen306@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -29,3 +52,5 @@ dependencies {
     compile "com.android.support:appcompat-v7:${APPCOMPAT_V7_VERSION}"
     compile "com.android.support:recyclerview-v7:${RECYCLERVIEW_V7_VERSION}"
 }
+
+apply from: './release-bintray.gradle'
